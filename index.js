@@ -44,7 +44,10 @@ exports.cron = (options, done) => {
   const task = () => {
     logger.debug('cron', 'starting backup')
     exports.backup(options, (err) => {
-      if (err) logger.error('cron', err)
+      if (err) {
+        logger.error('cron', err)
+      }
+      done(err);
     })
   }
 

@@ -1,6 +1,6 @@
 const { CronJob } = require('cron')
 
-module.exports = ({ task, options }) => {
+module.exports = (task, options) => {
   options = Object.assign({
     schedule: '0 0,12 * * *',
     start: false,
